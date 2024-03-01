@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { SimplePokemon } from "../interfaces/simple-pokemon";
 import Image from "next/image";
+import { SimplePokemon } from "../interfaces/simple-pokemon";
 import { IoHeartOutline } from "react-icons/io5";
 
 interface Props {
   pokemon: SimplePokemon;
 }
 
-export const PokemonCard = ({ pokemon }: Props) => {
+export const PokemonCard = ( { pokemon } : Props ) => {
   const { id, name } = pokemon;
 
   return (
@@ -16,10 +16,11 @@ export const PokemonCard = ({ pokemon }: Props) => {
         <div className="flex flex-col items-center justify-center text-center p-6 bg-gray-800 border-b">
           <Image
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
-            width={100}
-            height={100}
-            alt={pokemon.name}
-            key={pokemon.id}
+            width={ 100 }
+            height={ 100 }
+            alt={ pokemon.name }
+            key={ pokemon.id }
+            priority={ false } //Prioridad de carga, en vez de mostrar 150 img de una, la carga sera de apoco.
           />
           <p className="pt-2 text-lg font-semibold text-gray-50 capitalize">{name}</p>
           <div className="mt-5">

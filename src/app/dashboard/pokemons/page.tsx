@@ -1,5 +1,4 @@
 import { PokemonsResponse, SimplePokemon } from "@/app/pokemons";
-import Image from "next/image";
 import { PokemonGrid } from '../../pokemons/components/PokemonGrid';
 
 const getPokemons = async ( limit = 20, offset = 0):Promise<SimplePokemon[]> => {
@@ -13,8 +12,6 @@ const getPokemons = async ( limit = 20, offset = 0):Promise<SimplePokemon[]> => 
 
   return pokemons;
 }
-
-
 
 export default async function PokemonsPage() {
   const pokemons = await getPokemons(151);
